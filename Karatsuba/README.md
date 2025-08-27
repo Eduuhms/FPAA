@@ -140,7 +140,7 @@ O projeto está organizado da seguinte forma:
       - 𝑀 = 𝐸 − 𝑁 + 2𝑃
       - M = 13 - 11 + 2 * 1 (apenas um componente conexo)
       - M = 4
----
+--- 
 
 ## Documentação Linha a Linha  
 
