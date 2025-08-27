@@ -131,8 +131,8 @@ O projeto está organizado da seguinte forma:
     - **A13:** N10 → N1 (Terceira chamada recursiva para karatsuba)
 
   - **Grafo da função:**
+    .
 
-  
        ![alt text](Grafo_Karatsuba.png)
   
   - **Calculo da complexidade Ciclomática:**
