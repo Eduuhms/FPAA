@@ -74,16 +74,74 @@ Este projeto foi desenvolvido e testado na versão **Python 3.13.5**.
 
 ### Análise de Complexidade Assintótica — Contagem de Comparações  
 
+#### Recorrência do número de comparações
+Seja `C(n)` o número total de comparações para um array de tamanho `n`:  
 
+- Caso base 1:  
+  `C(1) = 0` (nenhuma comparação, pois o único elemento é min e max).  
+- Caso base 2:  
+  `C(2) = 1` (uma única comparação entre os dois elementos).  
+- Caso geral (n > 2):  
+  \[
+  C(n) = C(n/2) + C(n/2) + 2
+  \]  
+  ou seja:  
+  \[
+  C(n) = 2C(n/2) + 2
+  \]  
+
+### Resolução da Recorrência
+Cada divisão gera **duas subchamadas** de tamanho `n/2`.  
+Cada etapa de combinação exige apenas **2 comparações constantes**.  
+
+Logo, o crescimento de `C(n)` é proporcional a `n`.  
+
+**Conclusão:**  
+\[
+C(n) = O(n)
+\]  
 
 ---
 
 ### Análise pelo Teorema Mestre  
 
-  
+  A recorrência tem a forma:  
+
+\[
+T(n) = aT(n/b) + f(n)
+\]
+
+Comparando com o problema:  
+
+- \( a = 2 \)  (duas chamadas recursivas)  
+- \( b = 2 \)  (cada chamada é feita com metade do array)  
+- \( f(n) = O(1) \)  (trabalho fora da recursão é constante: 2 comparações)  
+
+Agora, calculamos:  
+
+\[
+\log_b(a) = \log_2(2) = 1
+\]  
+
+E temos:  
+- \( d = 0 \), pois \( f(n) = O(1) = O(n^0) \).  
+- Como \( d = 0 < 1 = \log_b(a) \), caímos no **Caso 1 do Teorema Mestre**.  
+
+Portanto:  
+
+\[
+T(n) = O(n^{\log_b(a)}) = O(n^1) = O(n)
+\]  
+
 
 ---
+## Grafos
+### Grafo de controle de fluxo
+![alt text](Grafo_fluxo_de_controle.png)
 
+### Grafo divisão e combinação
+![alt text](Diagrama_divisao_e_combinacao.png)
+---
 ## Documentação Linha a Linha  
 
 ### Arquivo: maxmin.py  
